@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cardapio">
+            <h2><span>Cardapio</span> {{cardapio.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Dia</span></dt>
+                <dd>
+                    <span>{{cardapio.dia}}</span>
+                </dd>
+                <dt><span>Principal</span></dt>
+                <dd>
+                    <span *ngFor="let principal of cardapio.principals; let last = last">
+                        <a [routerLink]="['/prato-principal', principal?.id, 'view' ]">{{principal.nomeDoPrato}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Acompanhamento</span></dt>
+                <dd>
+                    <span *ngFor="let acompanhamento of cardapio.acompanhamentos; let last = last">
+                        <a [routerLink]="['/acompanhamento', acompanhamento?.id, 'view' ]">{{acompanhamento.nomeDoAcompanhamento}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Salada</span></dt>
+                <dd>
+                    <span *ngFor="let salada of cardapio.saladas; let last = last">
+                        <a [routerLink]="['/salada', salada?.id, 'view' ]">{{salada.nomeDaSalada}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Vegetariano</span></dt>
+                <dd>
+                    <span *ngFor="let vegetariano of cardapio.vegetarianos; let last = last">
+                        <a [routerLink]="['/vegetariano', vegetariano?.id, 'view' ]">{{vegetariano.nomedoPrato}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Sobremesa</span></dt>
+                <dd>
+                    <span *ngFor="let sobremesa of cardapio.sobremesas; let last = last">
+                        <a [routerLink]="['/sobremesa', sobremesa?.id, 'view' ]">{{sobremesa.nomedaSobremesa}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cardapio', cardapio.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

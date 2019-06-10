@@ -1,0 +1,31 @@
+{
+    "name": "Salada",
+    "fields": [
+        {
+            "fieldName": "nomeDaSalada",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "cardapio",
+            "otherEntityRelationshipName": "salada",
+            "relationshipName": "cardapio",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190430183134",
+    "entityTableName": "salada",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Vegetariano",
+    "fields": [
+        {
+            "fieldName": "nomeDoPrato",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "cardapio",
+            "otherEntityRelationshipName": "vegetariano",
+            "relationshipName": "cardapio",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190430183135",
+    "entityTableName": "vegetariano",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

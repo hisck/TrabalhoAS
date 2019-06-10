@@ -1,0 +1,63 @@
+{
+    "name": "Cardapio",
+    "fields": [
+        {
+            "fieldName": "dia",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "pratoPrincipal",
+            "otherEntityRelationshipName": "cardapio",
+            "relationshipName": "principal",
+            "otherEntityField": "nomeDoPrato",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "acompanhamento",
+            "otherEntityRelationshipName": "cardapio",
+            "relationshipName": "acompanhamento",
+            "otherEntityField": "nomeDoAcompanhamento",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "salada",
+            "otherEntityRelationshipName": "cardapio",
+            "relationshipName": "salada",
+            "otherEntityField": "nomeDaSalada",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "vegetariano",
+            "otherEntityRelationshipName": "cardapio",
+            "relationshipName": "vegetariano",
+            "otherEntityField": "nomedoPrato",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "sobremesa",
+            "otherEntityRelationshipName": "cardapio",
+            "relationshipName": "sobremesa",
+            "otherEntityField": "nomedaSobremesa",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190430183137",
+    "entityTableName": "cardapio",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Cardapio.
+    -->
+    <changeSet id="20190430183137-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="cardapio_id"
+                                 baseTableName="cardapio_principal"
+                                 constraintName="fk_cardapio_principal_cardapio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cardapio"/>
+        <addForeignKeyConstraint baseColumnNames="principal_id"
+                                 baseTableName="cardapio_principal"
+                                 constraintName="fk_cardapio_principal_principal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="prato_principal"/>
+        
+        <addForeignKeyConstraint baseColumnNames="cardapio_id"
+                                 baseTableName="cardapio_acompanhamento"
+                                 constraintName="fk_cardapio_acompanhamento_cardapio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cardapio"/>
+        <addForeignKeyConstraint baseColumnNames="acompanhamento_id"
+                                 baseTableName="cardapio_acompanhamento"
+                                 constraintName="fk_cardapio_acompanhamento_acompanhamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="acompanhamento"/>
+        
+        <addForeignKeyConstraint baseColumnNames="cardapio_id"
+                                 baseTableName="cardapio_salada"
+                                 constraintName="fk_cardapio_salada_cardapio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cardapio"/>
+        <addForeignKeyConstraint baseColumnNames="salada_id"
+                                 baseTableName="cardapio_salada"
+                                 constraintName="fk_cardapio_salada_salada_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="salada"/>
+        
+        <addForeignKeyConstraint baseColumnNames="cardapio_id"
+                                 baseTableName="cardapio_vegetariano"
+                                 constraintName="fk_cardapio_vegetariano_cardapio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cardapio"/>
+        <addForeignKeyConstraint baseColumnNames="vegetariano_id"
+                                 baseTableName="cardapio_vegetariano"
+                                 constraintName="fk_cardapio_vegetariano_vegetariano_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vegetariano"/>
+        
+        <addForeignKeyConstraint baseColumnNames="cardapio_id"
+                                 baseTableName="cardapio_sobremesa"
+                                 constraintName="fk_cardapio_sobremesa_cardapio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cardapio"/>
+        <addForeignKeyConstraint baseColumnNames="sobremesa_id"
+                                 baseTableName="cardapio_sobremesa"
+                                 constraintName="fk_cardapio_sobremesa_sobremesa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sobremesa"/>
+        
+    </changeSet>
+</databaseChangeLog>
